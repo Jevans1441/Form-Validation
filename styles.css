@@ -1,0 +1,44 @@
+body {
+    margin: 0;
+}
+
+.signUp {
+    background: linear-gradient(to right,rgb(17, 91, 126) 50%,transparent 100%);      /* W3C */
+    font-size: 54px;
+    padding-bottom: 10px;
+    color: white;
+}
+
+form {
+    padding: 10px;
+}
+
+.form-group label {
+    font-size: 24px;
+    padding: 10px;
+    display: block;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    
+}
+
+.form-group input {
+    width: 320px;
+    padding: 10px;
+    font-size: 20px;
+    margin-left: 12px;
+}
+
+#formAboutMe {
+    width: 340px;
+    height: 200px;
+    margin-left: 12px;
+    font-size: 18px;
+}
+
+.submitBtn {
+    width: 140px;
+    margin-left: 120px;
+    margin-top: 10px;
+    font-size: 20px;
+}
