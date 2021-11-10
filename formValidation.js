@@ -2,9 +2,7 @@ const form = document.querySelector("form");
 const formUsername = document.querySelector("#formUsername");
 
 
-const validateInputs = () => {
-    if 
-}
+c
 
 
 form.addEventListener("submit", (e) => {
