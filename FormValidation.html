@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css" />
+    <title>Form Validation</title>
+    <script src="formValidation.js"></script>
+</head>
+
+<body>
+    <form>
+        <label for="name">Name:</label>
+        <input type='text' id='formName' required>
+        <button>Submit</button>
+
+
+
+        <label for="age">Age:</label>
+        <input type='number' id="ageNumber" required min="0" max="100">
+        <button>Submit</button>
+
+
+
+        <label for="username">Username:</label>
+        <input id="formUsername" minlength="6" maxlength="15" required>
+        <button>Submit</button>
+
+
+    </form>
+</body>
+
+</html>
