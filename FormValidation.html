@@ -7,31 +7,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css" />
     <title>Form Validation</title>
-    <script src="formValidation.js"></script>
 </head>
 
 <body>
     <div class="signUp">Sign Up</div>
     <form>
         <div class="form-group">
-            <label for="name">Fullname:</label>
-            <input type='text' id='formName' minlength="5" required>
+            <label for="name">Full Name:</label>
+            <input class='' placeholder="First and last name" type='text' id='name' minlength="5">
+            <div class='error-hint hidden' id='name-error'>Your name is required.</div>
 
             <label for="username">Username:</label>
-            <input id="formUsername" minlength="6" maxlength="15" required>
+            <input class='' placeholder="Username" id="username" minlength="6" maxlength="15">
+            <div class='error-hint hidden' id='name-error'>Your username is required.</div>
+
 
             <label for="password">Password:</label>
-            <input id="formPassword" minlength="6" maxlength="15" required>
+            <input class='' placeholder="Password" id="password" minlength="6" maxlength="15">
+            <div class='error-hint hidden' id='name-error'>Your password is required.</div>
+
 
             <label for="email">Email:</label>
-            <input id="formEmail" type="email" required>
+            <input class='' placeholder="Email" id="email" type="email">
+            <div class='error-hint hidden' id='name-error'>Your email is required.</div>
+
 
             <label for="about me">About Me:</label>
-            <textarea name="" id="formAboutMe" cols="30" rows="7" maxlength="250"></textarea>
+            <textarea name="" id="aboutMe" cols="30" rows="7" maxlength="250"></textarea>
+
             <br>
             <button class="submitBtn">Submit</button>
         </div>
     </form>
+
+    <div class="thankYou hidden">Thank you for Signing Up!</div>
+
+    <script src="formValidation.js"></script>
+
 </body>
 
 </html>
