@@ -1,7 +1,15 @@
+//simple check email regex
 function validateEmail(email) {
   const re =
     /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return re.test(String(email).toLowerCase());
+}
+
+//checks for a valid name, requires a first and last name, allows multiple uppercase in names
+//also requires first and last name to be between 0-19 characters each
+function validateName(name) {
+  const reg = /\b[A-Z][-'a-zA-Z]+,?\s[A-Z][-'a-zA-Z]{0,19}\b/;
+  return reg.test(name);
 }
 
 const form = document.querySelector("form");
@@ -13,52 +21,60 @@ const emailInput = document.querySelector("#email");
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
+  validForm = true; //check to see if form is valid after first submit
   validateInputs();
-  if (isFormValid) {
-    form.remove();
-    thankYou.classList.remove("hidden");
+  if (isLabelValid) {
+    // checks entire form is valid
+    form.remove(); // removes form to show completed
+    thankYou.classList.remove("hidden"); //show thank you div
   }
 });
 
-let isFormValid = false;
+let validForm = false; //check to see if form is valid after first submit
+let isLabelValid = false; // checks to see if label is valid
 
+//checks to see if labels are valid
 const validateLabel = (elem) => {
-  elem.classList.remove("invalid");
-  elem.nextElementSibling.classList.add("hidden");
+  elem.classList.remove("invalid"); //removes invalid tag if true
+  elem.nextElementSibling.classList.add("hidden"); //hides the error text
 };
 
 const invalidateLabel = (elem) => {
-  elem.classList.add("invalid");
-  elem.nextElementSibling.classList.remove("hidden");
+  elem.classList.add("invalid"); //adds invalid tag if false
+  elem.nextElementSibling.classList.remove("hidden"); //shows the error text
 };
 
 const validateInputs = () => {
-  isFormValid = true;
+  if (!validForm) return; //if validForm is not true
+
+  isLabelValid = true;
   validateLabel(nameInput);
   validateLabel(usernameInput);
   validateLabel(passwordInput);
   validateLabel(emailInput);
 
-  if (!nameInput.value) {
+  if (!validateName(nameInput.value)) {
+    isLabelValid = false;
     invalidateLabel(nameInput);
-    isFormValid = false;
   }
 
   if (!usernameInput.value) {
+    isLabelValid = false;
     invalidateLabel(usernameInput);
-    isFormValid = false;
   }
 
   if (!passwordInput.value) {
+    isLabelValid = false;
     invalidateLabel(passwordInput);
-    isFormValid = false;
   }
 
   if (!validateEmail(emailInput.value)) {
+    isLabelValid = false;
     invalidateLabel(emailInput);
-    isFormValid = false;
   }
 };
+
+//Event listeners for every label
 
 nameInput.addEventListener("input", () => {
   validateInputs();

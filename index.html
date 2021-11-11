@@ -14,30 +14,32 @@
     <form>
         <div class="form-group">
             <label for="name">Full Name:</label>
-            <input class='' placeholder="First and last name" type='text' id='name' minlength="5">
+            <input class='' placeholder="First and last name" id='name'>
             <div class='error-hint hidden' id='name-error'>Your name is required.</div>
 
             <label for="username">Username:</label>
             <input class='' placeholder="Username" id="username" minlength="6" maxlength="15">
-            <div class='error-hint hidden' id='name-error'>Your username is required.</div>
+            <div class='error-hint hidden' id='name-error'>A valid username is required.</div>
 
 
             <label for="password">Password:</label>
             <input class='' placeholder="Password" id="password" minlength="6" maxlength="15">
-            <div class='error-hint hidden' id='name-error'>Your password is required.</div>
+            <div class='error-hint hidden' id='name-error'>A valid password is required.</div>
 
 
             <label for="email">Email:</label>
             <input class='' placeholder="Email" id="email" type="email">
-            <div class='error-hint hidden' id='name-error'>Your email is required.</div>
+            <div class='error-hint hidden' id='name-error'>A valid email is required.</div>
 
 
             <label for="about me">About Me:</label>
-            <textarea name="" id="aboutMe" cols="30" rows="7" maxlength="250"></textarea>
+            <textarea placeholder="Optional" name="" id="aboutMe" cols="30" rows="7" maxlength="250"></textarea>
 
             <br>
             <button class="submitBtn">Submit</button>
         </div>
+
+
     </form>
 
     <div class="thankYou hidden">Thank you for Signing Up!</div>
