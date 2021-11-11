@@ -22,9 +22,8 @@ const emailInput = document.querySelector("#email");
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   validForm = true; //check to see if form is valid after first submit
-  validateInputs();
+  validateInputs(); // checks entire form is valid
   if (isLabelValid) {
-    // checks entire form is valid
     form.remove(); // removes form to show completed
     thankYou.classList.remove("hidden"); //show thank you div
   }
