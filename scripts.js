@@ -28,35 +28,50 @@ const validateLabel = (elem) => {
 };
 
 const invalidateLabel = (elem) => {
-  elem.nextElementSibling.classList.remove("hidden");
   elem.classList.add("invalid");
+  elem.nextElementSibling.classList.remove("hidden");
 };
 
 const validateInputs = () => {
+  isFormValid = true;
   validateLabel(nameInput);
   validateLabel(usernameInput);
   validateLabel(passwordInput);
   validateLabel(emailInput);
-  isFormValid = true;
 
   if (!nameInput.value) {
     invalidateLabel(nameInput);
     isFormValid = false;
   }
+
   if (!usernameInput.value) {
     invalidateLabel(usernameInput);
     isFormValid = false;
   }
+
   if (!passwordInput.value) {
     invalidateLabel(passwordInput);
     isFormValid = false;
   }
-  if (!validateEmail(!emailInput.value)) {
+
+  if (!validateEmail(emailInput.value)) {
     invalidateLabel(emailInput);
     isFormValid = false;
   }
 };
 
 nameInput.addEventListener("input", () => {
+  validateInputs();
+});
+
+usernameInput.addEventListener("input", () => {
+  validateInputs();
+});
+
+passwordInput.addEventListener("input", () => {
+  validateInputs();
+});
+
+emailInput.addEventListener("input", () => {
   validateInputs();
 });
