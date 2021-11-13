@@ -45,8 +45,8 @@ const invalidateLabel = (elem) => {
 
 const validateInputs = () => {
   if (!validForm) return; //if validForm is not true
-
   isLabelValid = true;
+
   validateLabel(nameInput);
   validateLabel(usernameInput);
   validateLabel(passwordInput);
@@ -90,3 +90,5 @@ passwordInput.addEventListener("input", () => {
 emailInput.addEventListener("input", () => {
   validateInputs();
 });
+
+//Toggle Password text
